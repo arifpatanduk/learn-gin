@@ -64,6 +64,7 @@ func UpdateCar(ctx *gin.Context){
 	})
 }
 
+// 
 func GetAllCar(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{
 		"cars": CarDatas,
