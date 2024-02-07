@@ -1,0 +1,116 @@
+basePath: /
+definitions:
+  models.Car:
+    properties:
+      brand:
+        type: string
+      createdAt:
+        type: string
+      id:
+        type: integer
+      model:
+        type: string
+      price:
+        type: integer
+      updatedAt:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: arifpatanduk1@gmail.com
+    name: API Support
+  description: This is a sample service for REST API in Golang
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Car API
+  version: "1.0"
+paths:
+  /cars:
+    get:
+      consumes:
+      - application/json
+      description: Get details of all car
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Car'
+      summary: Get all car
+      tags:
+      - cars
+    post:
+      consumes:
+      - application/json
+      description: Create new car
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Car'
+      summary: Create new car
+  /cars/{carID}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete the order corresponding to the input Id
+      parameters:
+      - description: ID of the car to be deleted
+        in: path
+        name: Id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: No Content
+      summary: Delete car identified by the given Id
+      tags:
+      - cars
+    get:
+      consumes:
+      - application/json
+      description: Get details of car corresponding to the input Id
+      parameters:
+      - description: ID of the car
+        in: path
+        name: Id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Car'
+      summary: Get details for a given Id
+      tags:
+      - cars
+    put:
+      consumes:
+      - application/json
+      description: Update the car corresponding to the input Id
+      parameters:
+      - description: ID of the car to be updated
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Car'
+      summary: Update car indetified by the given Id
+      tags:
+      - cars
+swagger: "2.0"
