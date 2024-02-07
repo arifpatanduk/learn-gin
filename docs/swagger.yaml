@@ -46,6 +46,13 @@ paths:
       consumes:
       - application/json
       description: Create new car
+      parameters:
+      - description: create car
+        in: body
+        name: models.Car
+        required: true
+        schema:
+          $ref: '#/definitions/models.Car'
       produces:
       - application/json
       responses:
@@ -98,11 +105,12 @@ paths:
       - application/json
       description: Update the car corresponding to the input Id
       parameters:
-      - description: ID of the car to be updated
-        in: path
-        name: id
+      - description: update car
+        in: body
+        name: models.Car
         required: true
-        type: integer
+        schema:
+          $ref: '#/definitions/models.Car'
       produces:
       - application/json
       responses:

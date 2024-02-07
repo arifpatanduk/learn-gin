@@ -53,6 +53,17 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "summary": "Create new car",
+                "parameters": [
+                    {
+                        "description": "create car",
+                        "name": "models.Car",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Car"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -108,11 +119,13 @@ const docTemplate = `{
                 "summary": "Update car indetified by the given Id",
                 "parameters": [
                     {
-                        "type": "integer",
-                        "description": "ID of the car to be updated",
-                        "name": "id",
-                        "in": "path",
-                        "required": true
+                        "description": "update car",
+                        "name": "models.Car",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Car"
+                        }
                     }
                 ],
                 "responses": {

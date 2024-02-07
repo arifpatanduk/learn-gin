@@ -15,6 +15,7 @@ import (
 // @Tag cars
 // @Accept json
 // @Produce json
+// @Param models.Car body true "create car"
 // @Success 200 {object} models.Car
 // @Router /cars [post]
 func CreateCar(ctx *gin.Context) {
@@ -41,7 +42,7 @@ func CreateCar(ctx *gin.Context) {
 // @Tags cars
 // @Accept json
 // @Produce json
-// @Param id path int true "ID of the car to be updated"
+// @Param models.Car body true "update car"
 // @Success 200 {object} models.Car
 // @Router /cars/{carID} [put]
 func UpdateCar(ctx *gin.Context) {
